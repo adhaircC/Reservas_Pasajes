@@ -13,7 +13,7 @@ class CreatePersonasTable extends Migration
      */
     public function up()
     {
-        Schema::create('Personas_table', function (Blueprint $table) {
+        Schema::create('Personas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreatePersonasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Personas_table');
+        Schema::dropIfExists('Personas');
     }
 }

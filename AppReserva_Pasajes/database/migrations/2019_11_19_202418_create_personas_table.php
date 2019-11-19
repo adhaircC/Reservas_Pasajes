@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePersonasColumns extends Migration
+class CreatePersonasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreatePersonasColumns extends Migration
      */
     public function up()
     {
-        Schema::table('Personas', function (Blueprint $table) {
-            $table->string('nombre');
-            //
+        Schema::create('Personas', function (Blueprint $table) {
+            $table->timestamps();
         });
     }
 
@@ -26,9 +25,6 @@ class CreatePersonasColumns extends Migration
      */
     public function down()
     {
-        Schema::table('Personas', function (Blueprint $table) {
-            $table->dropColumn('nombre');
-            //
-        });
+        Schema::dropIfExists('Personas');
     }
 }
